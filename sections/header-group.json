@@ -18,7 +18,50 @@
         "text": "Free Shipping across Ireland",
         "link": "",
         "text_2": "Choose two pieces, and I'll make a third at no cost",
+        "link_2": "",
         "change_every": 5
+      }
+    },
+    "marquee_djDUXz": {
+      "type": "marquee",
+      "blocks": {
+        "text_block_bXpeqL": {
+          "type": "text_block",
+          "settings": {
+            "text": "Handmade to order"
+          }
+        },
+        "text_block_rbhiTk": {
+          "type": "text_block",
+          "settings": {
+            "text": "Choose two pieces, and I'll make a third at no cost"
+          }
+        },
+        "text_block_6VXaJf": {
+          "type": "text_block",
+          "settings": {
+            "text": "Secure Checkout"
+          }
+        }
+      },
+      "block_order": [
+        "text_block_bXpeqL",
+        "text_block_rbhiTk",
+        "text_block_6VXaJf"
+      ],
+      "name": "Scrolling Banner",
+      "settings": {
+        "bg_color": "#FFFFFF",
+        "text_color": "#000000",
+        "font_size": 16,
+        "padding_top": 12,
+        "padding_bottom": 12,
+        "enable_swiper": false,
+        "scroll_speed": 30,
+        "swiper_autoplay": true,
+        "swiper_speed": 3,
+        "swiper_arrows": true,
+        "swiper_pagination": false
       }
     },
     "header": {
@@ -65,6 +108,7 @@
   },
   "order": [
     "announcement-bar",
+    "marquee_djDUXz",
     "header"
   ]
 }
