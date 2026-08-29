@@ -480,6 +480,7 @@
           "type": "slide",
           "settings": {
             "media_style": "image",
+            "image": "shopify://shop_images/iap_1200x1200.3438481263_pm4pfa8u.png",
             "video_url": "",
             "controls": false,
             "stars_count": 0,
