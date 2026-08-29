@@ -1,6 +1,6 @@
 .list-payment {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   justify-content: flex-start;
   margin: 0;
   padding: 0;
@@ -9,5 +9,6 @@
 .list-payment__item {
   align-items: center;
   display: flex;
+  flex-shrink: 0;
   padding: 0.5rem;
 }

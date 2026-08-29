@@ -388,7 +388,8 @@
               <div class="footer__payment">
                 <h2 class="caption-large" id="FooterCountryLabel">{{ 'sections.footer.payment' | t }}</h2>
                 <ul class="list list-payment" role="list">
-                  {%- for type in shop.enabled_payment_types -%}
+                  {%- assign payment_types = 'master,visa,shopify_pay,apple_pay,google_pay' | split: ',' -%}
+                  {%- for type in payment_types -%}
                     <li class="list-payment__item">
                       {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
                     </li>
