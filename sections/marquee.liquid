@@ -3,21 +3,20 @@
   "name": "Scrolling Banner",
   "settings": [
     {
-      "type": "color_scheme",
-      "id": "color_scheme",
-      "label": "Color Scheme",
-      "default": "scheme-4"
+      "type": "header",
+      "content": "General Settings"
     },
     {
-      "type": "range",
-      "id": "scroll_speed",
-      "min": 10,
-      "max": 60,
-      "step": 2,
-      "unit": "s",
-      "label": "Scroll Speed",
-      "default": 30,
-      "info": "Lower is faster, higher is slower."
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background Color",
+      "default": "#000000"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text Color",
+      "default": "#ffffff"
     },
     {
       "type": "range",
@@ -48,6 +47,65 @@
       "unit": "px",
       "label": "Padding Bottom",
       "default": 12
+    },
+    {
+      "type": "header",
+      "content": "Display Mode"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_swiper",
+      "label": "Use Swiper Slider instead of Marquee",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Marquee Settings",
+      "info": "Applies only if Swiper is unchecked"
+    },
+    {
+      "type": "range",
+      "id": "scroll_speed",
+      "min": 10,
+      "max": 60,
+      "step": 2,
+      "unit": "s",
+      "label": "Scroll Speed",
+      "default": 30,
+      "info": "Lower is faster, higher is slower."
+    },
+    {
+      "type": "header",
+      "content": "Swiper Settings",
+      "info": "Applies only if Swiper is checked"
+    },
+    {
+      "type": "checkbox",
+      "id": "swiper_autoplay",
+      "label": "Enable Autoplay",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "swiper_speed",
+      "min": 2,
+      "max": 10,
+      "step": 1,
+      "unit": "s",
+      "label": "Autoplay Delay",
+      "default": 3
+    },
+    {
+      "type": "checkbox",
+      "id": "swiper_arrows",
+      "label": "Show Navigation Arrows",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "swiper_pagination",
+      "label": "Show Pagination Dots",
+      "default": false
     }
   ],
   "blocks": [
@@ -78,45 +136,61 @@
 }
 {% endschema %}
 
-<div class="sr-marquee-section color-{{ section.settings.color_scheme }} gradient" style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
-  <div class="sr-marquee-container" style="--marquee-speed: {{ section.settings.scroll_speed }}s; --marquee-font-size: {{ section.settings.font_size }}px;">
-    
-    {%- capture marquee_content -%}
-      {%- for block in section.blocks -%}
-        <div class="sr-marquee-item" {{ block.shopify_attributes }}>
-          <span class="sr-marquee-text">{{ block.settings.text }}</span>
-          <span class="sr-marquee-dot"></span>
-        </div>
-      {%- endfor -%}
-    {%- endcapture -%}
+<!-- Swiper CDN Links (Remove if your theme already includes Swiper) -->
+{% if section.settings.enable_swiper %}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+{% endif %}
 
-    <div class="sr-marquee-track">
-      <div class="sr-marquee-content">
-        {{ marquee_content }}
+<div class="sr-marquee-section" style="background-color: {{ section.settings.bg_color }}; color: {{ section.settings.text_color }}; padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
+  
+  {% if section.settings.enable_swiper %}
+    <!-- SWIPER SLIDER MODE -->
+    <div class="swiper sr-swiper-{{ section.id }}" style="--marquee-font-size: {{ section.settings.font_size }}px;">
+      <div class="swiper-wrapper">
+        {%- for block in section.blocks -%}
+          <div class="swiper-slide" {{ block.shopify_attributes }}>
+            <span class="sr-marquee-text">{{ block.settings.text }}</span>
+          </div>
+        {%- endfor -%}
       </div>
-      <div class="sr-marquee-content" aria-hidden="true">
-        {{ marquee_content }}
-      </div>
-      <div class="sr-marquee-content" aria-hidden="true">
-        {{ marquee_content }}
-      </div>
-      <div class="sr-marquee-content" aria-hidden="true">
-        {{ marquee_content }}
-      </div>
+      
+      {% if section.settings.swiper_pagination %}
+        <div class="swiper-pagination"></div>
+      {% endif %}
+      
+      {% if section.settings.swiper_arrows %}
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      {% endif %}
     </div>
 
-  </div>
+  {% else %}
+    <!-- CONTINUOUS MARQUEE MODE -->
+    <div class="sr-marquee-container" style="--marquee-speed: {{ section.settings.scroll_speed }}s; --marquee-font-size: {{ section.settings.font_size }}px;">
+      {%- capture marquee_content -%}
+        {%- for block in section.blocks -%}
+          <div class="sr-marquee-item" {{ block.shopify_attributes }}>
+            <span class="sr-marquee-text">{{ block.settings.text }}</span>
+            <span class="sr-marquee-dot"></span>
+          </div>
+        {%- endfor -%}
+      {%- endcapture -%}
+
+      <div class="sr-marquee-track">
+        <div class="sr-marquee-content">{{ marquee_content }}</div>
+        <div class="sr-marquee-content" aria-hidden="true">{{ marquee_content }}</div>
+        <div class="sr-marquee-content" aria-hidden="true">{{ marquee_content }}</div>
+        <div class="sr-marquee-content" aria-hidden="true">{{ marquee_content }}</div>
+      </div>
+    </div>
+  {% endif %}
+  
 </div>
 
-{% comment %} Styles moved to Arvenixo.css {% endcomment %}
-
-
 <style>
-
-
-
 /* --------------------------------------------------------------------------
-   30. MARQUEE / SCROLLING BANNER
+   30. MARQUEE / SCROLLING BANNER & SWIPER
    -------------------------------------------------------------------------- */
 .sr-marquee-section {
     width: 100vw;
@@ -128,6 +202,7 @@
     align-items: center;
 }
 
+/* MARQUEE STYLES */
 .sr-marquee-container {
     display: flex;
     overflow: hidden;
@@ -157,31 +232,83 @@
     white-space: nowrap;
 }
 
-.sr-marquee-text {
-    font-family: inherit;
-    font-size: var(--marquee-font-size);
-    letter-spacing: 0.5px;
-    color: white;
-}
-
 .sr-marquee-dot {
     display: inline-block;
     width: 8px;
     height: 8px;
     background-color: currentColor;
-    border-radius: var(--sl-radius-round);
+    border-radius: 50%;
     margin: 0 40px;
     flex-shrink: 0;
 }
 
-@keyframes sr-scroll {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(-25%);
-    }
+/* TEXT SHARED STYLES */
+.sr-marquee-text {
+    font-family: inherit;
+    font-size: var(--marquee-font-size);
+    letter-spacing: 0.5px;
+    color: inherit;
 }
 
+/* SWIPER STYLES */
+.swiper.sr-swiper-{{ section.id }} {
+    width: 100%;
+    padding: 0 40px; /* Space for arrows */
+}
+
+.swiper-slide {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-button-next, .swiper-button-prev {
+    color: inherit;
+    transform: scale(0.5);
+}
+
+.swiper-pagination-bullet {
+    background: currentColor;
+}
+
+@keyframes sr-scroll {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-25%); }
+}
 </style>
+
+{% if section.settings.enable_swiper %}
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const initSwiper = setInterval(() => {
+      if (typeof Swiper !== 'undefined') {
+        clearInterval(initSwiper);
+        new Swiper('.sr-swiper-{{ section.id }}', {
+          slidesPerView: 1,
+          centeredSlides: true,
+          loop: true,
+          {% if section.settings.swiper_autoplay %}
+          autoplay: {
+            delay: {{ section.settings.swiper_speed | times: 1000 }},
+            disableOnInteraction: false,
+          },
+          {% endif %}
+          {% if section.settings.swiper_pagination %}
+          pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+          },
+          {% endif %}
+          {% if section.settings.swiper_arrows %}
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+          {% endif %}
+        });
+      }
+    }, 100);
+  });
+</script>
+{% endif %}
