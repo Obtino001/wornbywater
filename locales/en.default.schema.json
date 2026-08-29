@@ -674,6 +674,12 @@
 					"label": "Icon",
 					"info": "25 x 25px recommended"
 				},
+				"text_2": {
+					"label": "Second text"
+				},
+				"link_2": {
+					"label": "Second link"
+				},
 				"change_every": {
 					"label": "Change message every"
 				}
