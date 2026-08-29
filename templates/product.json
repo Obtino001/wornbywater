@@ -355,7 +355,7 @@
             "tab_title": "Size Guide",
             "tab_text": "<p><em><strong>Please follow this size guide to find your correct size</strong></em></p><h2>How to know your ring size</h2><p>All you will need is this ring size chart (the measurement is calculated using the inner diameter of the ring).</p><h3>With a ring you already have that fits you well</h3><ol><li>Select a ring you already own that fits well.</li><li>Measure the inner diameter of the ring in mm or inches.</li><li>Reference the table below to determine your size.</li></ol><h3>With a string</h3><p>Another simple way to measure your size is with a string. Wrap it around your finger at the point where you want to wear the ring.</p><p>*Be careful not to pull the string too tight or too loose — otherwise, the measurement will not be accurate.</p>",
             "size_chart_page": "",
-            "image": "shopify://shop_images/Beige_Clean_Size_Chart_Instagram_Post_2_3b1bc98f-2a76-4e51-9c73-1ab05d5716ea.png"
+            "image": "shopify://shop_images/Beige_Clean_Size_Chart_Instagram_Post_74695ce9-aff6-4870-91aa-8d7ecb375ac4.png"
           }
         },
         "tab_PNUxRP": {
@@ -456,6 +456,7 @@
           "type": "slide",
           "settings": {
             "media_style": "image",
+            "video_url": "",
             "controls": false,
             "stars_count": 5,
             "text": "<p>the perfect candle replacement, obsessed with the lamps!</p>",
@@ -466,6 +467,7 @@
           "type": "slide",
           "settings": {
             "media_style": "image",
+            "video_url": "",
             "controls": false,
             "stars_count": 5,
             "text": "<p>Our kids bring them everywhere, specially when doing puzzles and drawings</p>",
@@ -476,6 +478,7 @@
           "type": "slide",
           "settings": {
             "media_style": "image",
+            "video_url": "",
             "controls": false,
             "stars_count": 5,
             "text": "<p>This is the brand to go for lamps, love the quality and design, as always you get what you pay</p>",
@@ -486,6 +489,7 @@
           "type": "slide",
           "settings": {
             "media_style": "image",
+            "video_url": "",
             "controls": false,
             "stars_count": 5,
             "text": "<p>Love them, they give the perfect luxury touch to any room</p>",
@@ -496,6 +500,7 @@
           "type": "slide",
           "settings": {
             "media_style": "image",
+            "video_url": "",
             "controls": false,
             "stars_count": 5,
             "text": "<p>The cordless lamp you've been looking for!</p>",
@@ -506,6 +511,7 @@
           "type": "slide",
           "settings": {
             "media_style": "image",
+            "video_url": "",
             "controls": false,
             "stars_count": 5,
             "text": "<p>All my friends want them too now, at least I was the first one to get them..!</p>",
@@ -516,6 +522,7 @@
           "type": "slide",
           "settings": {
             "media_style": "image",
+            "video_url": "",
             "controls": false,
             "stars_count": 5,
             "text": "<p>I use it every day early in the morning and on our dining table, it is do convenient and cool</p>",
@@ -608,21 +615,21 @@
         "dots_show_mobile": true,
         "btn_icon_size": 50,
         "btn_icon_size_mobile": 40,
-        "card_bg_color": "#FFFFFF",
+        "card_bg_color": "#ffffff",
         "card_bg_gradient": "",
-        "card_border_color": "#DEDBC4",
+        "card_border_color": "#dedbc4",
         "media_border_color": "#121212",
         "stars_color": "#323232",
         "text_color": "#323232",
         "author_color": "#323232",
-        "video_icon_bg_color": "#FFFFFF",
+        "video_icon_bg_color": "#ffffff",
         "video_icon_color": "#121212",
         "arrow_color": "#837c5c",
         "arrow_hover_color": "#837c5c",
         "dots_color": "#837c5c",
         "heading_color": "#837c5c",
         "sub_heading_color": "#837c5c",
-        "background_color": "#F6F5F2",
+        "background_color": "#f6f5f2",
         "background_gradient": "",
         "border_color": "#121212",
         "margin_top": 0,
