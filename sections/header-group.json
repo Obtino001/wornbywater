@@ -22,12 +22,14 @@
         },
         "text_block_rbhiTk": {
           "type": "text_block",
+          "disabled": true,
           "settings": {
             "text": "Choose two pieces, and I'll make a third at no cost"
           }
         },
         "text_block_6VXaJf": {
           "type": "text_block",
+          "disabled": true,
           "settings": {
             "text": "Secure Checkout"
           }
@@ -38,9 +40,10 @@
         "text_block_rbhiTk",
         "text_block_6VXaJf"
       ],
+      "disabled": true,
       "name": "Scrolling Banner",
       "settings": {
-        "bg_color": "#ffffff",
+        "bg_color": "#56443E",
         "text_color": "#000000",
         "font_size": 14,
         "padding_top": 12,
@@ -59,7 +62,7 @@
         "color_scheme": "1",
         "text": "Free Shipping across Ireland",
         "link": "",
-        "text_2": "Choose two pieces, and I'll make a third at no cost",
+        "text_2": "Shaped by land and sea along the Wild Atlantic Way",
         "link_2": "",
         "change_every": 5
       }
