@@ -1,1 +1,502 @@
-{"sections":{"banner":{"type":"main-collection-banner","settings":{"heading_tag":"h1","add_word":"Collection","show_word":true,"show_collection_description":true,"show_collection_image":true,"image_width_1":90,"image_width_2":90}},"product-grid":{"type":"main-collection-product-grid","settings":{"products_per_page":22,"image_product_grid_position":"right","heading_tag":"h3","image_ratio":"landscape","image_fit":"contain","show_secondary_image":true,"show_vendor":true,"show_sku":false,"show_desc":true,"enable_filtering":false,"enable_sorting":false,"image_filter_ratio":"3\/2","image_filter_fit":"cover","image_filter_columns":2,"columns_mobile":"2"}},"testimonials_86m3dH":{"type":"testimonials","blocks":{"testimonials_slide_JTPkxy":{"type":"testimonials_slide","settings":{"slide_text":"\"I never got to give it to her. But now I wear it. For her.\"","image":"shopify:\/\/shop_images\/067bc665-d539-453e-b7e8-71bf11ede815_1.png","slide_name":"Saoirse Kelly","slide_position":"Cork"}},"testimonials_slide_f3wyE4":{"type":"testimonials_slide","settings":{"slide_text":"\"I've never been good at saying things out loud. But when she opened it... she looked at me in a way I hadn't seen in a long time.\"","image":"shopify:\/\/shop_images\/Untitled_design_7_1.png","slide_name":"Ciara O'Brien","slide_position":"Galway"}},"testimonials_slide_dTacCB":{"type":"testimonials_slide","settings":{"slide_text":"\"I always feel guilty when I buy something for myself. But with this, it was different. I felt it was something I had deserved for a long time.\"","image":"shopify:\/\/shop_images\/Untitled_design_8.png","slide_name":"Niamh Byrne","slide_position":"Limerick"}}},"block_order":["testimonials_slide_JTPkxy","testimonials_slide_f3wyE4","testimonials_slide_dTacCB"],"settings":{"sub_title":"From those who truly valued it","border_top":false}},"ss_testimonial_8_68g9G9":{"type":"ss-testimonial-8","blocks":{"testimonials_3BatFC":{"type":"testimonials","settings":{"stars_count":5,"heading":"","text":"I lost my dad in March. I didn't know what I wanted, just that I needed something. The stone she found felt like it had been waiting on that beach for me. I can't explain it better than that.","author_date":"Sarah, Christchurch"}},"testimonials_NambPj":{"type":"testimonials","settings":{"stars_count":5,"heading":"","text":"I never got to give it to her. But now I wear it for her.","author_date":"Pauline, Blenheim"}},"testimonials_4YVyNE":{"type":"testimonials","settings":{"stars_count":5,"heading":"","text":"Bought it for my sister after we lost Mum. She rang me crying — the good kind. Said it was the first thing in months that felt like it actually understood.","author_date":"Anna, Nelson"}},"testimonials_D4VeGM":{"type":"testimonials","settings":{"stars_count":5,"heading":"","text":"The clasp is solid, the chain hasn't tarnished, and the stone hasn't shifted once. I wear it every day, in the sea included. Made to last, which matters when it means this much.","author_date":"Janine, Wellington"}},"testimonials_w4wAk6":{"type":"testimonials","settings":{"stars_count":5,"heading":"","text":"My stone has a line of white running through it. Not perfect. She wrote that no two are the same. I wouldn't swap it for a flawless one. The flaw is the whole point.","author_date":"Lisa, Hokitika"}},"testimonials_NHhBUy":{"type":"testimonials","settings":{"stars_count":5,"heading":"","text":"I'm not one for words about feelings. I'll just say I've worn it for six months and I'm not taking it off","author_date":"Margaret, Timaru"}}},"block_order":["testimonials_3BatFC","testimonials_NambPj","testimonials_4YVyNE","testimonials_D4VeGM","testimonials_w4wAk6","testimonials_NHhBUy"],"disabled":true,"name":"SS - Testimonial #8","settings":{"heading":"From those who truly valued it","heading_custom":true,"heading_font":"josefin_sans_n4","heading_size":24,"heading_size_mobile":16,"heading_height":130,"content_align":"center","rating_text_hide":true,"rating_text":"Excellent","rating_text_custom":false,"rating_text_font":"josefin_sans_n4","rating_text_size":24,"rating_text_size_mobile":20,"rating_text_height":130,"rating_text_mt":8,"rating_hide":false,"rating":4.8,"stars_count":5,"stars_size":24,"stars_size_mobile":16,"stars_gap":3,"text":"<p>based on <strong>16,137<\/strong> reviews<\/p>","text_custom":true,"text_font":"josefin_sans_n4","text_size":20,"text_size_mobile":13,"text_advanced":true,"text_height":130,"text_mt":16,"slider_width":80,"slider_view":3,"slider_view_mobile":1.2,"slider_advanced":false,"slider_gap":20,"slider_gap_mobile":20,"slider_mt":36,"card_advanced":false,"card_padding_vertical":32,"card_padding_vertical_mobile":24,"card_padding_horizontal":40,"card_padding_horizontal_mobile":24,"card_radius":16,"card_border_thickness":0,"card_align":"left","card_align_mobile":"left","card_shadow":true,"card_heading_custom":true,"card_heading_font":"josefin_sans_n4","card_heading_size":24,"card_heading_size_mobile":16,"card_heading_advanced":false,"card_heading_height":130,"card_heading_mt":16,"card_text_custom":true,"card_text_font":"josefin_sans_n4","card_text_size":14,"card_text_size_mobile":14,"card_text_advanced":false,"card_text_height":150,"card_text_mt":16,"card_text_more":"View more","card_text_less":"View less","card_count_words":20,"card_author_date_text_custom":false,"card_author_date_text_font":"josefin_sans_n4","card_author_date_text_size":16,"card_author_date_text_size_mobile":12,"card_author_date_text_advanced":false,"card_author_date_text_height":130,"card_author_date_text_mt":16,"arrow_show_desktop":true,"arrow_show_mobile":false,"arrow_size":50,"arrow_size_mobile":50,"arrow_icon_size":28,"arrow_icon_size_mobile":28,"arrow_border_thickness":0,"dots_show_desktop":false,"dots_show_mobile":false,"dots_size":12,"dots_size_mobile":12,"button":"View All","button_url":"","new_tab":false,"button_custom":true,"button_font":"josefin_sans_n4","button_size":16,"button_size_mobile":10,"button_advanced":false,"button_height":100,"button_padding_vertical":20,"button_padding_horizontal":16,"button_radius":8,"button_border_thickness":0,"button_mt":24,"button_align":"center","button_color":"#f6f4f3","button_hover_color":"#f6f4f3","button_bg_color":"#56443e","button_bg_hover_color":"#121212","button_border_color":"#121212","button_border_hover_color":"#121212","card_heading_color":"#121212","card_text_color":"#121212","card_author_date_text_color":"#121212","card_bg_color":"#f6f4f3","card_border_color":"#121212","card_shadow_color":"#f6f4f3","arrow_color":"#121212","arrow_hover_color":"#121212","arrow_bg_color":"#ffffff","arrow_bg_hover_color":"#ffffff","arrow_border_color":"#121212","arrow_border_hover_color":"#121212","dots_color":"#121212","stars_color":"#ffffff","stars_bg_color":"#00b67a","stars_bg_half_color":"#dddddd","heading_color":"#121212","rating_text_color":"#121212","text_color":"#121212","background_style":"solid","background_color":"#f6f4f3","background_gradient":"linear-gradient(180deg, rgba(206, 239, 199, 1), rgba(255, 255, 255, 1) 100%)","border_color":"#121212","margin_top":0,"margin_bottom":0,"padding_top":60,"padding_bottom":60,"padding_horizontal":5,"padding_horizontal_mobile":1.5,"width":"page","content_width":1200,"border_thickness":0,"lazy":true}}},"order":["banner","product-grid","testimonials_86m3dH","ss_testimonial_8_68g9G9"]}
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "settings": {
+        "heading_tag": "h1",
+        "add_word": "Collection",
+        "show_word": true,
+        "show_collection_description": true,
+        "show_collection_image": true,
+        "image_width_1": 90,
+        "image_width_2": 90
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "settings": {
+        "products_per_page": 22,
+        "image_product_grid_position": "right",
+        "heading_tag": "h3",
+        "image_ratio": "landscape",
+        "image_fit": "contain",
+        "show_secondary_image": true,
+        "show_vendor": true,
+        "show_sku": false,
+        "show_desc": true,
+        "enable_filtering": false,
+        "enable_sorting": false,
+        "image_filter_ratio": "3/2",
+        "image_filter_fit": "cover",
+        "image_filter_columns": 2,
+        "columns_mobile": "2"
+      }
+    },
+    "ss_testimonial_12_tDJqL7": {
+      "type": "ss-testimonial-12",
+      "blocks": {
+        "slide_EnjbeU": {
+          "type": "slide",
+          "settings": {
+            "media_style": "image",
+            "image": "shopify://shop_images/il_1588xN.8426535249_hjg1.jpg",
+            "video_url": "",
+            "controls": false,
+            "stars_count": 0,
+            "text": "<p>I never knew a little piece of the Irish coast could become something I’d wear every day.</p>",
+            "author": "<p>Eabha Kearney, Kilkee</p>"
+          }
+        },
+        "slide_zw6rbz": {
+          "type": "slide",
+          "settings": {
+            "media_style": "image",
+            "image": "shopify://shop_images/il_1588xN.8064599634_bi3o.jpg",
+            "video_url": "",
+            "controls": false,
+            "stars_count": 0,
+            "text": "<p>I wanted jewellery that felt personal, not something you see everywhere.<br/><br/>Something with a story behind it.</p>",
+            "author": "<p>Aisling Moran, Ballyvaughan</p>"
+          }
+        },
+        "slide_Vz4ffE": {
+          "type": "slide",
+          "settings": {
+            "media_style": "image",
+            "image": "shopify://shop_images/iap_1200x1200.3438481263_pm4pfa8u.png",
+            "video_url": "",
+            "controls": false,
+            "stars_count": 0,
+            "text": "<p>The thought of wearing a stone shaped by the Atlantic just felt so much more meaningful than buying something mass-produced.</p>",
+            "author": "<p>Gráinne Walsh, Keel</p>"
+          }
+        },
+        "slide_Qzkdhd": {
+          "type": "slide",
+          "settings": {
+            "media_style": "image",
+            "image": "shopify://shop_images/iap_1200x1200.8209727251_gtj4rb1s.png",
+            "video_url": "",
+            "controls": false,
+            "stars_count": 0,
+            "text": "<p>My stone was found along the West Coast of Ireland and turned into a piece made just for me...<br/><br/>That makes it feel completely different.!</p>",
+            "author": "<p>Sorcha Ní Bhraonáin, Kinvara</p>"
+          }
+        },
+        "slide_bLANYH": {
+          "type": "slide",
+          "settings": {
+            "media_style": "image",
+            "image": "shopify://shop_images/iap_1200x1200.7777959751_5kjcdwww.png",
+            "video_url": "",
+            "controls": false,
+            "stars_count": 0,
+            "text": "<p>I just got my ring today, and I cant stop staring at it. It was totally worth the wait and I am beyond happy. Thank you!!</p>",
+            "author": "<p>Caoimhe Ryan, Roundstone</p>"
+          }
+        },
+        "slide_ifdmp6": {
+          "type": "slide",
+          "settings": {
+            "media_style": "image",
+            "image": "shopify://shop_images/iap_1200x1200.7473159858_qyspf2gd.png",
+            "video_url": "",
+            "controls": false,
+            "stars_count": 0,
+            "text": "<p>Everything I found felt so ordinary.<br/><br/>I wanted something that couldn't have been made for anyone else</p>",
+            "author": "<p>Róisín Daly, Doolin</p>"
+          }
+        },
+        "slide_rBpmjQ": {
+          "type": "slide",
+          "settings": {
+            "media_style": "image",
+            "image": "shopify://shop_images/iap_1200x1200.7310961705_oo7et47x.png",
+            "video_url": "",
+            "controls": false,
+            "stars_count": 0,
+            "text": "<p>I thought I was just buying a piece of jewellery.<br/><br/>I didn't expect it to remind me of home.</p>",
+            "author": "<p>Orlaith Byrne, Westport</p>"
+          }
+        }
+      },
+      "block_order": [
+        "slide_EnjbeU",
+        "slide_zw6rbz",
+        "slide_Vz4ffE",
+        "slide_Qzkdhd",
+        "slide_bLANYH",
+        "slide_ifdmp6",
+        "slide_rBpmjQ"
+      ],
+      "name": "SS - Testimonials #12",
+      "settings": {
+        "heading": "<p>Share your piece with me and get 15% off your next order.</p>",
+        "heading_custom": true,
+        "heading_font": "playfair_display_n4",
+        "heading_size": 30,
+        "heading_size_mobile": 16,
+        "heading_height": 120,
+        "heading_align": "center",
+        "heading_align_mobile": "center",
+        "sub_heading": "",
+        "sub_heading_custom": true,
+        "sub_heading_font": "poppins_n4",
+        "sub_heading_size": 30,
+        "sub_heading_size_mobile": 22,
+        "sub_heading_height": 150,
+        "sub_heading_mt": 12,
+        "sub_heading_align": "center",
+        "sub_heading_align_mobile": "center",
+        "slider_view": 5,
+        "slider_view_mobile": 1.7,
+        "slider_gap": 28,
+        "slider_gap_mobile": 20,
+        "slider_mt": 20,
+        "autoplay": false,
+        "autoplay_delay": 5,
+        "card_padding_vertical": 20,
+        "card_padding_vertical_mobile": 16,
+        "card_padding_horizontal": 20,
+        "card_padding_horizontal_mobile": 16,
+        "card_radius": 20,
+        "card_border_thickness": 1,
+        "card_shadow": false,
+        "media_radius": 20,
+        "media_border_thickness": 0,
+        "media_ratio": "square",
+        "media_ratio_mobile": "square",
+        "content_padding_vertical": 0,
+        "content_padding_vertical_mobile": 0,
+        "content_padding_horizontal": 0,
+        "content_padding_horizontal_mobile": 0,
+        "hide_content": false,
+        "stars_size": 16,
+        "stars_mt": 12,
+        "stars_align": "center",
+        "stars_align_mobile": "center",
+        "text_custom": true,
+        "text_font": "playfair_display_n4",
+        "text_size": 16,
+        "text_size_mobile": 16,
+        "text_height": 130,
+        "text_mt": 12,
+        "text_align": "center",
+        "text_align_mobile": "center",
+        "author_custom": true,
+        "author_font": "playfair_display_n4",
+        "author_size": 14,
+        "author_size_mobile": 14,
+        "author_height": 130,
+        "author_mt": 12,
+        "author_align": "center",
+        "author_align_mobile": "center",
+        "navigation_mt": 40,
+        "navigation_gap": 20,
+        "navigation_align": "center",
+        "navigation_align_mobile": "center",
+        "arrow_size": 50,
+        "arrow_size_mobile": 42,
+        "arrow_show_desktop": true,
+        "arrow_show_mobile": true,
+        "dots_size": 10,
+        "dots_size_mobile": 10,
+        "dots_show_desktop": false,
+        "dots_show_mobile": false,
+        "btn_icon_size": 0,
+        "btn_icon_size_mobile": 20,
+        "card_bg_color": "#F6F4F3",
+        "card_bg_gradient": "",
+        "card_border_color": "#dedbc4",
+        "media_border_color": "#121212",
+        "stars_color": "#323232",
+        "text_color": "#323232",
+        "author_color": "#323232",
+        "video_icon_bg_color": "#ffffff",
+        "video_icon_color": "#121212",
+        "arrow_color": "#837c5c",
+        "arrow_hover_color": "#837c5c",
+        "dots_color": "#837c5c",
+        "heading_color": "#000000",
+        "sub_heading_color": "#837c5c",
+        "background_color": "#f6f5f2",
+        "background_gradient": "",
+        "border_color": "#121212",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 36,
+        "padding_bottom": 36,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 1.5,
+        "full_width": true,
+        "content_width": 1200,
+        "border_thickness": 0,
+        "lazy": true
+      }
+    },
+    "testimonials_86m3dH": {
+      "type": "testimonials",
+      "blocks": {
+        "testimonials_slide_JTPkxy": {
+          "type": "testimonials_slide",
+          "settings": {
+            "slide_text": "\"I never got to give it to her. But now I wear it. For her.\"",
+            "image": "shopify://shop_images/067bc665-d539-453e-b7e8-71bf11ede815_1.png",
+            "slide_name": "Saoirse Kelly",
+            "slide_position": "Cork"
+          }
+        },
+        "testimonials_slide_f3wyE4": {
+          "type": "testimonials_slide",
+          "settings": {
+            "slide_text": "\"I've never been good at saying things out loud. But when she opened it... she looked at me in a way I hadn't seen in a long time.\"",
+            "image": "shopify://shop_images/Untitled_design_7_1.png",
+            "slide_name": "Ciara O'Brien",
+            "slide_position": "Galway"
+          }
+        },
+        "testimonials_slide_dTacCB": {
+          "type": "testimonials_slide",
+          "settings": {
+            "slide_text": "\"I always feel guilty when I buy something for myself. But with this, it was different. I felt it was something I had deserved for a long time.\"",
+            "image": "shopify://shop_images/Untitled_design_8.png",
+            "slide_name": "Niamh Byrne",
+            "slide_position": "Limerick"
+          }
+        }
+      },
+      "block_order": [
+        "testimonials_slide_JTPkxy",
+        "testimonials_slide_f3wyE4",
+        "testimonials_slide_dTacCB"
+      ],
+      "disabled": true,
+      "settings": {
+        "sub_title": "From those who truly valued it",
+        "border_top": false
+      }
+    },
+    "ss_testimonial_8_68g9G9": {
+      "type": "ss-testimonial-8",
+      "blocks": {
+        "testimonials_3BatFC": {
+          "type": "testimonials",
+          "settings": {
+            "stars_count": 5,
+            "heading": "",
+            "text": "I lost my dad in March. I didn't know what I wanted, just that I needed something. The stone she found felt like it had been waiting on that beach for me. I can't explain it better than that.",
+            "author_date": "Sarah, Christchurch"
+          }
+        },
+        "testimonials_NambPj": {
+          "type": "testimonials",
+          "settings": {
+            "stars_count": 5,
+            "heading": "",
+            "text": "I never got to give it to her. But now I wear it for her.",
+            "author_date": "Pauline, Blenheim"
+          }
+        },
+        "testimonials_4YVyNE": {
+          "type": "testimonials",
+          "settings": {
+            "stars_count": 5,
+            "heading": "",
+            "text": "Bought it for my sister after we lost Mum. She rang me crying — the good kind. Said it was the first thing in months that felt like it actually understood.",
+            "author_date": "Anna, Nelson"
+          }
+        },
+        "testimonials_D4VeGM": {
+          "type": "testimonials",
+          "settings": {
+            "stars_count": 5,
+            "heading": "",
+            "text": "The clasp is solid, the chain hasn't tarnished, and the stone hasn't shifted once. I wear it every day, in the sea included. Made to last, which matters when it means this much.",
+            "author_date": "Janine, Wellington"
+          }
+        },
+        "testimonials_w4wAk6": {
+          "type": "testimonials",
+          "settings": {
+            "stars_count": 5,
+            "heading": "",
+            "text": "My stone has a line of white running through it. Not perfect. She wrote that no two are the same. I wouldn't swap it for a flawless one. The flaw is the whole point.",
+            "author_date": "Lisa, Hokitika"
+          }
+        },
+        "testimonials_NHhBUy": {
+          "type": "testimonials",
+          "settings": {
+            "stars_count": 5,
+            "heading": "",
+            "text": "I'm not one for words about feelings. I'll just say I've worn it for six months and I'm not taking it off",
+            "author_date": "Margaret, Timaru"
+          }
+        }
+      },
+      "block_order": [
+        "testimonials_3BatFC",
+        "testimonials_NambPj",
+        "testimonials_4YVyNE",
+        "testimonials_D4VeGM",
+        "testimonials_w4wAk6",
+        "testimonials_NHhBUy"
+      ],
+      "disabled": true,
+      "name": "SS - Testimonial #8",
+      "settings": {
+        "heading": "From those who truly valued it",
+        "heading_custom": true,
+        "heading_font": "josefin_sans_n4",
+        "heading_size": 24,
+        "heading_size_mobile": 16,
+        "heading_height": 130,
+        "content_align": "center",
+        "rating_text_hide": true,
+        "rating_text": "Excellent",
+        "rating_text_custom": false,
+        "rating_text_font": "josefin_sans_n4",
+        "rating_text_size": 24,
+        "rating_text_size_mobile": 20,
+        "rating_text_height": 130,
+        "rating_text_mt": 8,
+        "rating_hide": false,
+        "rating": 4.8,
+        "stars_count": 5,
+        "stars_size": 24,
+        "stars_size_mobile": 16,
+        "stars_gap": 3,
+        "text": "<p>based on <strong>16,137</strong> reviews</p>",
+        "text_custom": true,
+        "text_font": "josefin_sans_n4",
+        "text_size": 20,
+        "text_size_mobile": 13,
+        "text_advanced": true,
+        "text_height": 130,
+        "text_mt": 16,
+        "slider_width": 80,
+        "slider_view": 3,
+        "slider_view_mobile": 1.2,
+        "slider_advanced": false,
+        "slider_gap": 20,
+        "slider_gap_mobile": 20,
+        "slider_mt": 36,
+        "card_advanced": false,
+        "card_padding_vertical": 32,
+        "card_padding_vertical_mobile": 24,
+        "card_padding_horizontal": 40,
+        "card_padding_horizontal_mobile": 24,
+        "card_radius": 16,
+        "card_border_thickness": 0,
+        "card_align": "left",
+        "card_align_mobile": "left",
+        "card_shadow": true,
+        "card_heading_custom": true,
+        "card_heading_font": "josefin_sans_n4",
+        "card_heading_size": 24,
+        "card_heading_size_mobile": 16,
+        "card_heading_advanced": false,
+        "card_heading_height": 130,
+        "card_heading_mt": 16,
+        "card_text_custom": true,
+        "card_text_font": "josefin_sans_n4",
+        "card_text_size": 14,
+        "card_text_size_mobile": 14,
+        "card_text_advanced": false,
+        "card_text_height": 150,
+        "card_text_mt": 16,
+        "card_text_more": "View more",
+        "card_text_less": "View less",
+        "card_count_words": 20,
+        "card_author_date_text_custom": false,
+        "card_author_date_text_font": "josefin_sans_n4",
+        "card_author_date_text_size": 16,
+        "card_author_date_text_size_mobile": 12,
+        "card_author_date_text_advanced": false,
+        "card_author_date_text_height": 130,
+        "card_author_date_text_mt": 16,
+        "arrow_show_desktop": true,
+        "arrow_show_mobile": false,
+        "arrow_size": 50,
+        "arrow_size_mobile": 50,
+        "arrow_icon_size": 28,
+        "arrow_icon_size_mobile": 28,
+        "arrow_border_thickness": 0,
+        "dots_show_desktop": false,
+        "dots_show_mobile": false,
+        "dots_size": 12,
+        "dots_size_mobile": 12,
+        "button": "View All",
+        "button_url": "",
+        "new_tab": false,
+        "button_custom": true,
+        "button_font": "josefin_sans_n4",
+        "button_size": 16,
+        "button_size_mobile": 10,
+        "button_advanced": false,
+        "button_height": 100,
+        "button_padding_vertical": 20,
+        "button_padding_horizontal": 16,
+        "button_radius": 8,
+        "button_border_thickness": 0,
+        "button_mt": 24,
+        "button_align": "center",
+        "button_color": "#f6f4f3",
+        "button_hover_color": "#f6f4f3",
+        "button_bg_color": "#56443e",
+        "button_bg_hover_color": "#121212",
+        "button_border_color": "#121212",
+        "button_border_hover_color": "#121212",
+        "card_heading_color": "#121212",
+        "card_text_color": "#121212",
+        "card_author_date_text_color": "#121212",
+        "card_bg_color": "#f6f4f3",
+        "card_border_color": "#121212",
+        "card_shadow_color": "#f6f4f3",
+        "arrow_color": "#121212",
+        "arrow_hover_color": "#121212",
+        "arrow_bg_color": "#ffffff",
+        "arrow_bg_hover_color": "#ffffff",
+        "arrow_border_color": "#121212",
+        "arrow_border_hover_color": "#121212",
+        "dots_color": "#121212",
+        "stars_color": "#ffffff",
+        "stars_bg_color": "#00b67a",
+        "stars_bg_half_color": "#dddddd",
+        "heading_color": "#121212",
+        "rating_text_color": "#121212",
+        "text_color": "#121212",
+        "background_style": "solid",
+        "background_color": "#f6f4f3",
+        "background_gradient": "linear-gradient(180deg, rgba(206, 239, 199, 1), rgba(255, 255, 255, 1) 100%)",
+        "border_color": "#121212",
+        "margin_top": 0,
+        "margin_bottom": 0,
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "padding_horizontal": 5,
+        "padding_horizontal_mobile": 1.5,
+        "width": "page",
+        "content_width": 1200,
+        "border_thickness": 0,
+        "lazy": true
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "product-grid",
+    "ss_testimonial_12_tDJqL7",
+    "testimonials_86m3dH",
+    "ss_testimonial_8_68g9G9"
+  ]
+}
