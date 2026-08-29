@@ -1,0 +1,92 @@
+<link rel="stylesheet" href="{{ 'component-rte.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'section-main-page.css' | asset_url }}" media="print" onload="this.media='all'">
+
+<noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'section-main-page.css' | asset_url | stylesheet_tag }}</noscript>
+
+<div class='container page-width--narrow'>
+	<{{ section.settings.heading_tag }} class='page-title title--page h2 heading-tag-h2'>
+		{%- if section.settings.page.title != blank -%}
+			{{ section.settings.page.title | escape }}
+		{%- else -%}
+			Page title
+		{%- endif -%}
+	</{{ section.settings.heading_tag }}>
+	<div class="rte">
+		{%- if section.settings.page.content != blank -%}
+			{{ section.settings.page.content }}
+		{%- else -%}
+			<div class='page-placeholder-wrapper placeholder'>
+				{{ 'page' | placeholder_svg_tag: 'page-placeholder' }}
+			</div>
+		{%- endif -%}
+	</div>
+</div>
+
+{% schema %}
+{
+	"name": "t:sections.page.name",
+	"tag": "section",
+	"class": "page-section",
+	"enabled_on": {
+		"templates": ["*"]
+	},
+	"settings": [
+		{
+			"type": "page",
+			"id": "page",
+			"label": "t:sections.page.settings.page.label",
+			"info": "t:sections.page.settings.page.info"
+		},
+		{
+			"type": "select",
+			"id": "heading_tag",
+			"options": [
+				{
+					"value": "h1",
+					"label": "t:sections.all.heading_tag.options_1.label"
+				},
+				{
+					"value": "h2",
+					"label": "t:sections.all.heading_tag.options_2.label"
+				},
+				{
+					"value": "h3",
+					"label": "t:sections.all.heading_tag.options_3.label"
+				},
+				{
+					"value": "h4",
+					"label": "t:sections.all.heading_tag.options_4.label"
+				},
+				{
+					"value": "h5",
+					"label": "t:sections.all.heading_tag.options_5.label"
+				},
+				{
+					"value": "h6",
+					"label": "t:sections.all.heading_tag.options_6.label"
+				},
+				{
+					"value": "div",
+					"label": "t:sections.all.heading_tag.options_7.label"
+				},
+				{
+					"value": "span",
+					"label": "t:sections.all.heading_tag.options_8.label"
+				},
+				{
+					"value": "p",
+					"label": "t:sections.all.heading_tag.options_9.label"
+				}
+			],
+			"default": "h2",
+			"label": "t:sections.all.heading_tag.label"
+		}
+	],
+	"presets": [
+		{
+			"name": "t:sections.page.presets.name"
+		}
+	]
+}
+{% endschema %}

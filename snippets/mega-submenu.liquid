@@ -1,0 +1,65 @@
+<div class="header__mega-menu mega-menu mega-menu--tabs mega-submenu color-background-2">
+  <div class="mega-menu__tabs">
+    {% for childlink in link.links %}
+      {% if childlink.links == blank %}
+        <div class="mega-menu__tab-wrapper {% if childlink.current %}mega-menu__tab-wrapper--active{% endif %}">
+          <a
+            href="{{ childlink.url }}"
+            class="mega-menu__tab-heading mega-submenu-link mega-submenu-enable-link"
+            {% if childlink.current %}
+              aria-current="page"
+            {% endif %}
+          >
+            <span>
+              {{ childlink.title | escape }}
+            </span>
+          </a>
+        </div>
+      {% else %}
+        <div class="mega-menu__tab">
+          <div class="mega-menu__tab-wrapper {% if forloop.index == 1 %}mega-menu__tab-wrapper--active{% endif %}">
+            <div class="mega-menu__tab-info">
+              {% if clickable_link %}
+                <a
+                  href="{{ childlink.url }}"
+                  class="mega-menu__tab-heading mega-submenu-link mega-submenu-enable-link{% if childlink.current %} mega-menu__tab-wrapper--active{% endif %}"
+                  {% if childlink.current %}
+                    aria-current="page"
+                  {% endif %}
+                >
+                  <span>
+                    {{ childlink.title | escape }}
+                  </span>
+                </a>
+              {% else %}
+                <div class="mega-menu__tab-heading {% if childlink.links == blank %}mega-menu__tab-inner--only-heading{% endif %}">
+                  <span>
+                    {{ childlink.title | escape }}
+                  </span>
+                </div>
+              {% endif %}
+              {% render 'icon-caret' %}
+            </div>
+            {% if childlink.links != blank %}
+              <ul class="mega-menu__tab-list list-unstyled" role="list">
+                {%- for grandchildlink in childlink.links -%}
+                  <li class="mega-menu__tab-list-item body-small">
+                    <a
+                      href="{{ grandchildlink.url }}"
+                      class="mega-menu__tab-list-link focus-inset mega-menu__link header__menu-item"
+                      aria-label="{{ grandchildlink.title | escape }}"
+                    >
+                      <span>
+                        {{- grandchildlink.title | escape -}}
+                      </span>
+                    </a>
+                  </li>
+                {% endfor %}
+              </ul>
+            {% endif %}
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>

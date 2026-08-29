@@ -1,0 +1,25 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-login",
+      "settings": {
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+      }
+    },
+    "image-collage": {
+      "type": "image-collage",
+      "settings": {
+        "button_style": "secondary"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "newsletter",
+    "image-collage"
+  ]
+}

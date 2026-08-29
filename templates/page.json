@@ -1,0 +1,50 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "settings": {}
+    },
+    "rich_text_dznxDc": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_jL9WFi": {
+          "type": "heading",
+          "disabled": true,
+          "settings": {
+            "heading": "Compelling Section Focus Message",
+            "heading_tag": "h2",
+            "heading_size": "medium"
+          }
+        },
+        "text_EenFpC": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Free shipping on all orders to Spain. No minimum amount. No hidden fees.<\/p><p>Each piece of jewelry is made personally for you when you place your order. Delivery time is 10-14 days from your order — including elaboration time (2-3 days). You will receive an email confirmation when your order has been shipped.<\/p><p>If you have any questions about your delivery, do not hesitate to write to me at <a href=\"mailto:carmen@piedramar.es\">carmen@piedramar.es<\/a> — I reply as soon as I can.<\/p><p>— Carmen<\/p>"
+          }
+        },
+        "button_kLMK4K": {
+          "type": "button",
+          "settings": {
+            "button_label": "View the collection",
+            "button_link": "shopify:\/\/collections\/view-the-collection",
+            "button_style_secondary": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_jL9WFi",
+        "text_EenFpC",
+        "button_kLMK4K"
+      ],
+      "name": "t:sections.rich-text.presets.name",
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_dznxDc"
+  ]
+}

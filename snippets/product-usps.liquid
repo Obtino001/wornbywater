@@ -1,0 +1,43 @@
+<style>
+  .custom-product-usps-{{ block.id }} {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: {{ block.settings.margin_vertical }}px 0;
+  }
+  
+  .custom-usp-badge-{{ block.id }} {
+    background-color: {{ block.settings.bg_color }};
+    color: {{ block.settings.text_color }};
+    font-family: inherit;
+    font-size: {{ block.settings.font_size }}px;
+    padding: 6px 10px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+  }
+
+  .custom-usp-badge-{{ block.id }} svg {
+    width: 10px;
+    height: 10px;
+    color: {{ block.settings.icon_color }};
+  }
+</style>
+
+<div class="custom-product-usps-{{ block.id }}" {{ block.shopify_attributes }}>
+  {%- assign usps = block.settings.usp_list | split: ',' -%}
+  {%- for usp in usps -%}
+    {%- assign usp_text = usp | strip -%}
+    {%- if usp_text != blank -%}
+      <div class="custom-usp-badge-{{ block.id }}">
+        {{ usp_text }}
+        {%- if block.settings.show_icon -%}
+          <svg viewBox="0 0 14 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M1 5L5 9L13 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+  {%- endfor -%}
+</div>

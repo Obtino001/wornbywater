@@ -1,0 +1,104 @@
+{{ 'component-cart.css' | asset_url | stylesheet_tag }}
+{{ 'component-totals.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
+{{ 'component-discounts.css' | asset_url | stylesheet_tag }}
+
+<div class="container{% if cart == empty %} is-empty{% endif %}" id="main-cart-footer" data-id="{{ section.id }}">
+	<div class="cart__footer">
+		{%- if section.settings.show_cart_note -%}
+			<cart-note class="cart__note field">
+				<label for="Cart-note">{{ 'sections.cart.note' | t }}</label>
+				<textarea dir="ltr" class="text-area text-area--resize-vertical field__input" name="note" id="Cart-note" placeholder="{{ 'sections.cart.note' | t }}">{{ cart.note }}</textarea>
+			</cart-note>
+		{%- endif -%}
+
+		<div class="cart__blocks">
+			{% for block in section.blocks %}
+				{%- case block.type -%}
+				{%- when '@app' -%}
+				{% render block %}
+				{%- when 'subtotal' -%}
+					<div class="cart__blocks-content js-contents" {{ block.shopify_attributes }}>
+						<div class="totals__wrapper">
+							<div class="totals" role="status">
+								<h3 class="totals__subtotal">{{ 'sections.cart.shipping' | t }}:</h3>
+								<p class="totals__subtotal-value">{{ 'sections.cart.free_shipping' | t }}</p>
+							</div>
+							<div class="totals" role="status">
+								<h3 class="totals__subtotal">Total:</h3>
+								<p class="totals__subtotal-value">{{ cart.total_price | money_with_currency }}</p>
+							</div>
+
+					</div>
+					{%- else -%}
+					<div class="cart__ctas" {{ block.shopify_attributes }}>
+						<noscript>
+							<button type="submit" class="cart__update-button button button--secondary" form="cart">
+								{{ 'sections.cart.update' | t }}
+							</button>
+						</noscript>
+
+						<button type="submit" class="cart__checkout-button button cart__checkout" name="checkout"{% if cart == empty %} disabled{% endif %} form="cart">
+							{%- render 'icon-lock' -%}
+							<span>{{ 'sections.cart.checkout' | t }}</span>
+						</button>
+						{% render 'Payments', show_secure_label: true %}
+					</div>
+				{%- endcase -%}
+			{% endfor %}
+		</div>
+	</div>
+	{%- if additional_checkout_buttons -%}
+		<div class="cart__footer-dynamic-checkout">
+			<div class="cart__dynamic-checkout-buttons additional-checkout-buttons">
+				{{ content_for_additional_checkout_buttons }}
+			</div>
+		</div>
+	{%- endif -%}
+	<div class="cart-errors" id="cart-errors"></div>
+</div>
+
+{% javascript %}
+class CartNote extends HTMLElement {
+	constructor() {
+		super();
+
+		this.addEventListener('change', debounce((event) => {
+			const body = JSON.stringify({note: event.target.value});
+			fetch(`${routes.cart_update_url}`, {...fetchConfig(), ...{body}});
+		}, 300))
+	}
+}
+
+customElements.define('cart-note', CartNote);
+{% endjavascript %}
+
+{% schema %}
+{
+  "name": "t:sections.main-cart-footer.name",
+  "class": "cart__footer-wrapper",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_cart_note",
+      "default": false,
+      "label": "t:sections.main-cart-footer.settings.show_cart_note.label"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "subtotal",
+      "name": "t:sections.main-cart-footer.blocks.subtotal.name",
+      "limit": 1
+    },
+    {
+      "type": "buttons",
+      "name": "t:sections.main-cart-footer.blocks.buttons.name",
+      "limit": 1
+    },
+    {
+      "type": "@app"
+    }
+  ]
+}
+{% endschema %}

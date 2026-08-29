@@ -1,0 +1,64 @@
+{
+  "sections": {
+    "cart-items": {
+      "type": "main-cart-items",
+      "settings": {
+        "color_scheme": "background-2",
+        "image_fit": "contain",
+        "show_vendor": false
+      }
+    },
+    "cart-footer": {
+      "type": "main-cart-footer",
+      "blocks": {
+        "subtotal": {
+          "type": "subtotal",
+          "settings": {}
+        },
+        "buttons": {
+          "type": "buttons",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "subtotal",
+        "buttons"
+      ],
+      "settings": {
+        "show_cart_note": false
+      }
+    },
+    "popular-products": {
+      "type": "popular-products",
+      "settings": {
+        "heading": "<p>You May also <em>Like</em></p>",
+        "link": "View all",
+        "collection": "bags-belts",
+        "products_limit": 3,
+        "border_top": true,
+        "image_ratio": "landscape",
+        "image_fit": "contain",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_desc": true
+      }
+    },
+    "newsletter": {
+      "type": "newsletter",
+      "settings": {
+        "heading": "<p>Subscribe to Enjoy <em>20% Off</em> on Your <em>First</em> Purchase</p>",
+        "heading_animation": true,
+        "sub_title": "Newsletter",
+        "newsletter_text": "<p>By pressing the button “Subscribe”, you confirm that you have read and are agreeing to our <a href=\"/blogs/news\" target=\"_blank\" title=\"News\">Terms of Use</a> regarding the storage of the data submitted through this form.</p>",
+        "button_style": "secondary",
+        "border_top": false
+      }
+    }
+  },
+  "order": [
+    "cart-items",
+    "cart-footer",
+    "popular-products",
+    "newsletter"
+  ]
+}

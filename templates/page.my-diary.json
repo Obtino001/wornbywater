@@ -1,0 +1,30 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {}
+    },
+    "featured_blog_hHA6VB": {
+      "type": "featured-blog",
+      "name": "t:sections.featured-blog.presets.name",
+      "settings": {
+        "heading": "<p>My diary<\/p>",
+        "post_heading_tag": "h2",
+        "blog": "the-morning-i-got-in-the-car-and-drove-to-costa-da-morte",
+        "post_limit": 4,
+        "show_image": true,
+        "show_tags": false,
+        "show_date": false,
+        "show_author": false,
+        "show_excerpt": false,
+        "show_view_all": false,
+        "show_border": false
+      }
+    }
+  },
+  "order": [
+    "main",
+    "featured_blog_hHA6VB"
+  ]
+}

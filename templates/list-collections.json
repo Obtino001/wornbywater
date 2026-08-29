@@ -1,0 +1,71 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-list-collections",
+      "settings": {
+        "title": "Collections",
+        "heading_tag": "h1",
+        "collection_card_tag": "h3",
+        "sort": "alphabetical_reversed",
+        "image": "product_hover",
+        "image_ratio": "portrait",
+        "image_fit": "cover",
+        "show_desc": true
+      }
+    },
+    "image-collage": {
+      "type": "image-collage",
+      "blocks": {
+        "b926c340-dcd4-4fe2-9d27-d37f829d7605": {
+          "type": "image-collage_image",
+          "settings": {
+            "image_width": 120
+          }
+        },
+        "49f5fdcb-0677-487e-9ddc-8179b8793cc1": {
+          "type": "image-collage_image",
+          "settings": {
+            "image_width": 120
+          }
+        },
+        "ac45522b-95e3-4fc0-987b-854f7b217ba8": {
+          "type": "image-collage_image",
+          "settings": {
+            "image_width": 120
+          }
+        },
+        "fa6978f1-4613-4900-8123-5ac7b069e534": {
+          "type": "image-collage_image",
+          "settings": {
+            "image_width": 120
+          }
+        },
+        "8aad8280-4e94-4d8a-9401-14f8f5ab1310": {
+          "type": "image-collage_image",
+          "settings": {
+            "image_width": 120
+          }
+        }
+      },
+      "block_order": [
+        "b926c340-dcd4-4fe2-9d27-d37f829d7605",
+        "49f5fdcb-0677-487e-9ddc-8179b8793cc1",
+        "ac45522b-95e3-4fc0-987b-854f7b217ba8",
+        "fa6978f1-4613-4900-8123-5ac7b069e534",
+        "8aad8280-4e94-4d8a-9401-14f8f5ab1310"
+      ],
+      "settings": {
+        "sub_title": "instagram",
+        "title": "<p>Follow<em> </em>Us on <em>Instagram</em></p>",
+        "name_account": "@handmade_studio",
+        "desc_account": "14k Followers",
+        "button_label": "follow on instagram",
+        "button_style": "secondary"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "image-collage"
+  ]
+}

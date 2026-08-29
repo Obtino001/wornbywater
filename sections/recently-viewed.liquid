@@ -1,0 +1,352 @@
+{{ 'template-collection.css' | asset_url | stylesheet_tag }}
+{{ 'section-products-grid.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'recently-viewed.js' | asset_url }}" defer="defer"></script>
+
+<link
+  rel="preload"
+  href="{{ 'component-card.css' | asset_url }}"
+  as="style"
+	onload="this.onload=null;this.rel='stylesheet'"
+>
+<link
+  rel="preload"
+  href="{{ 'component-price.css' | asset_url }}"
+  as="style"
+	onload="this.onload=null;this.rel='stylesheet'"
+>
+<link
+  rel="preload"
+  href="{{ 'component-badge.css' | asset_url }}"
+  as="style"
+	onload="this.onload=null;this.rel='stylesheet'"
+>
+<link
+  rel="preload"
+  href="{{ 'component-rte.css' | asset_url }}"
+  as="style"
+	onload="this.onload=null;this.rel='stylesheet'"
+>
+
+<script src="{{ 'products-grid.js' | asset_url }}" defer="defer"></script>
+
+<noscript>{{ 'component-card.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'component-price.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'component-badge.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'component-rte.css' | asset_url | stylesheet_tag }}</noscript>
+
+{%- style -%}
+  .recently-viewed__wrapper {
+    position: relative;
+  }
+  .recently-viewed__empty {
+    display: none;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+  .recently-viewed__empty span {
+    max-width: 550px;
+    text-align: center;
+  }
+  .recently-viewed--empty .recently-viewed__empty {
+    display: flex;
+  }
+  .recently-viewed .loading-overlay {
+    inset: 0;
+    z-index: 6;
+    display: none;
+    width: 100%;
+    padding: 0 5rem;
+  }
+  .recently-viewed.recently-viewed--loading .loading-overlay {
+    display: block;
+  }
+  .recently-viewed.recently-viewed--loading .loading-overlay .loading-overlay__spinner {
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .recently-viewed.recently-viewed--loading .recently-viewed__navigation,
+  .recently-viewed.recently-viewed--empty .recently-viewed__navigation {
+    display: none;
+  }
+{%- endstyle -%}
+
+<div
+  class="recently-viewed recently-viewed--loading color-{{ section.settings.color_scheme }} background section-{{ section.id }}-padding no-js-hidden{% if search.performed %} recently-viewed--search-perfomed{% endif %} products-grid {% if total_shop_products > 50 %} products-grid--loading{% endif %} section-{{ section.id }}-padding"
+  data-base-url="{{ routes.search_url }}?section_id={{ section.id }}&type=product"
+  data-products-limit="{{ section.settings.products_limit }}"
+  data-expiration-days="{{ settings.recently_product_record_lifetime }}"
+  {% if request.page_type == 'product' and product != blank %}
+    data-current-page-product-id="{{ product.id }}"
+  {% endif %}
+>
+  <div class="container">
+    {% liquid
+			paginate search.results by 50
+				assign product_list = search.results | where: 'object_type', 'product'
+			endpaginate
+			assign product_count = 0 
+
+			for product in product_list
+				assign product_count = product_count | plus: 1 
+			endfor 
+		%}
+
+		<div class="products-grid__top">
+			<div class="products-grid__top-text">
+				{%- if section.settings.subheading != blank -%}
+					<div class="subtitle products-grid__subtitle">
+						{{- section.settings.subheading }}
+					</div>
+				{%- endif -%}
+
+				{%- if section.settings.heading != blank -%}
+					<{{ section.settings.heading_tag }} class='h2 products-grid__heading title--section {% if section.settings.heading_tag == 'span' %}heading-tag-block{% endif %}'>
+						{{ section.settings.heading }}
+					</{{ section.settings.heading_tag }}>
+				{%- endif -%}
+
+				{%- if section.settings.text != blank -%}
+					<p class="products-grid__text">{{ section.settings.text | newline_to_br }}</p>
+				{%- endif -%}
+			</div>
+
+			{%- if section.settings.button_show -%}
+				<a
+					{% if section.settings.button_link.url != blank %}
+						href="{{ section.settings.button_link }}"
+					{% endif %}
+					class="button products-grid__button button--primary-size button--arrow button--{{ section.settings.button_style }}"
+					{% if section.settings.button_link.url == blank %}
+						aria-disabled="true"
+					{% endif %}
+				>
+					<span>{{ section.settings.button_label | escape }}</span>
+					{% render 'icon-button-arrow' %}
+				</a>
+			{%- endif -%}
+		</div>
+    <div class="products-grid__products">
+      <div class="loading-overlay">
+        <div class="loading-overlay__spinner">
+          {% render 'icon-loading' %}
+        </div>
+      </div>
+
+      <div class="recently-viewed__empty body-large">
+        <span class="body-large">{{- 'recently_viewed.empty_message' | t -}}</span>
+      </div>
+      <ul
+        id="products-grid"
+        data-id="{{ section.id }}"
+        class="products-grid__products-items collection-product-list--1-mobile list-unstyled"
+      >
+        {%- for product in product_list -%}
+          <li class="collection-product-card {% if settings.quickview_hover %}quickview--hover{% endif %} slider__slide">
+            {% render 'product-card',
+              product_card_product: product,
+              media_size: section.settings.image_ratio,
+              media_fit: section.settings.image_fit,
+              show_secondary_image: section.settings.show_secondary_image,
+              show_vendor: section.settings.show_vendor,
+              show_desc: section.settings.show_desc,
+              columns: 4,
+              section_id: section.id,
+              add_id: forloop.index
+            %}
+          </li>
+        {%- endfor -%}
+      </ul>
+		</div>
+	</div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.recently-viewed.name",
+  "tag": "section",
+  "class": "recently-viewed-section recently-viewed-outer",
+  "limit": 1,
+  "disabled_on": {
+    "templates": ["password"],
+    "groups": ["*"]
+  },
+  "settings": [
+    {
+      "type": "range",
+      "id": "products_limit",
+      "min": 1,
+      "max": 50,
+      "step": 1,
+      "default": 12,
+      "label": "t:sections.recently-viewed.settings.products_limit.label"
+    },
+    {
+			"type": "header",
+			"content": "t:sections.products-grid.settings.header__3.content"
+		},
+		{
+			"type": "select",
+			"id": "image_ratio",
+			"options": [
+				{
+					"value": "landscape",
+					"label": "t:sections.featured-products.settings.image_ratio.options__1.label"
+				},
+				{
+					"value": "portrait",
+					"label": "t:sections.featured-products.settings.image_ratio.options__2.label"
+				},
+				{
+					"value": "square",
+					"label": "t:sections.featured-products.settings.image_ratio.options__3.label"
+				}
+			],
+			"default": "square",
+			"label": "t:sections.featured-products.settings.image_ratio.label"
+		},
+		{
+			"type": "select",
+			"id": "image_fit",
+			"label": "t:sections.featured-products.settings.image_fit.label",
+			"options": [
+				{
+					"value": "contain",
+					"label": "t:sections.featured-products.settings.image_fit.options__1.label"
+				},
+				{
+					"value": "cover",
+					"label": "t:sections.featured-products.settings.image_fit.options__2.label"
+				}
+			],
+			"default": "contain"
+		},
+		{
+			"type": "checkbox",
+			"id": "show_secondary_image",
+			"default": true,
+			"label": "t:sections.products-grid.settings.show_secondary_image.label"
+		},
+		{
+			"type": "checkbox",
+			"id": "show_vendor",
+			"default": true,
+			"label": "t:sections.products-grid.settings.show_vendor.label"
+		},
+		{
+			"type": "checkbox",
+			"id": "show_desc",
+			"default": false,
+			"label": "t:sections.products-grid.settings.show_desc.label",
+			"info": "t:sections.products-grid.settings.show_desc.info"
+		},
+		{
+			"type": "header",
+			"content": "t:sections.products-grid.settings.header__4.content"
+		},
+		{
+			"type": "text",
+			"id": "subheading",
+			"label": "t:sections.all.subheading.label"
+		},
+		{
+      "type": "inline_richtext",
+      "id": "heading",
+      "default": "t:sections.recently-viewed.settings.heading.default",
+      "label": "t:sections.all.heading.label"
+    },
+		{
+			"type": "select",
+			"id": "heading_tag",
+			"options": [
+				{
+					"value": "h1",
+					"label": "t:sections.all.heading_tag.options_1.label"
+				},
+				{
+					"value": "h2",
+					"label": "t:sections.all.heading_tag.options_2.label"
+				},
+				{
+					"value": "h3",
+					"label": "t:sections.all.heading_tag.options_3.label"
+				},
+				{
+					"value": "h4",
+					"label": "t:sections.all.heading_tag.options_4.label"
+				},
+				{
+					"value": "h5",
+					"label": "t:sections.all.heading_tag.options_5.label"
+				},
+				{
+					"value": "h6",
+					"label": "t:sections.all.heading_tag.options_6.label"
+				},
+				{
+					"value": "div",
+					"label": "t:sections.all.heading_tag.options_7.label"
+				},
+				{
+					"value": "span",
+					"label": "t:sections.all.heading_tag.options_8.label"
+				},
+				{
+					"value": "p",
+					"label": "t:sections.all.heading_tag.options_9.label"
+				}
+			],
+			"default": "h2",
+			"label": "t:sections.all.heading_tag.label"
+		},
+		{
+			"type": "textarea",
+			"id": "text",
+			"label": "t:sections.all.text.label"
+		},
+		{
+			"type": "header",
+			"content": "t:sections.all.button.header_button.content"
+		},
+		{
+			"type": "checkbox",
+			"id": "button_show",
+			"default": true,
+			"label": "t:sections.all.button.button_show.label"
+		},
+		{
+			"type": "text",
+			"id": "button_label",
+			"default": "t:sections.products-grid.settings.button_label.default",
+			"label": "t:sections.all.button.button_label.label"
+		},
+		{
+			"type": "select",
+			"id": "button_style",
+			"options": [
+				{
+					"value": "primary",
+					"label": "t:sections.all.button.button_style.options__1.label"
+				},
+				{
+					"value": "secondary",
+					"label": "t:sections.all.button.button_style.options__2.label"
+				}
+			],
+			"default": "secondary",
+			"label": "t:sections.all.button.button_style.label"
+		},
+		{
+			"type": "url",
+			"id": "button_link",
+			"label": "t:sections.all.button.button_link.label"
+		},
+  ],
+  "presets": [
+    {
+      "name": "t:sections.recently-viewed.presets.name"
+    }
+  ]
+}
+{% endschema %}
