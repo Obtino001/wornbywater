@@ -456,6 +456,7 @@
           "type": "slide",
           "settings": {
             "media_style": "image",
+            "image": "shopify://shop_images/il_1588xN.8426535249_hjg1.jpg",
             "video_url": "",
             "controls": false,
             "stars_count": 0,
