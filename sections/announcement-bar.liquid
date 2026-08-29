@@ -1,98 +1,52 @@
-<announcement-bar
-	class="announcement-bar announcement-bar-{% if section.settings.color_scheme == '1' %}1{% endif %}{% if section.settings.color_scheme == '2' %}2{% endif %}"
-	role="region"
-	aria-label="{{ 'sections.header.announcement' | t }}"
-	data-interval="{{ section.settings.change_every | default: 5 | times: 1000 }}"
->
+<div class="announcement-bar announcement-bar-{% if section.settings.color_scheme == '1' %}1{% endif %}{% if section.settings.color_scheme == '2' %}2{% endif %}" role="region" aria-label="{{ 'sections.header.announcement' | t }}" data-interval="{{ section.settings.change_every | default: 5 | times: 1000 }}">
 	{%- if section.settings.text != blank -%}
-		<div class="announcement-bar__slide is-active" data-announcement-slide>
-			{%- if section.settings.link != blank -%}
-				<a href="{{ section.settings.link }}" class="announcement-bar__link link link--text focus-inset animate-arrow">
+		{%- if section.settings.link != blank -%}
+			<a href="{{ section.settings.link }}" class="announcement-bar__link link link--text focus-inset animate-arrow">
+		{%- endif -%}
+		<div class="announcement-bar__message">
+			{%- if section.settings.image != blank -%}
+				<figure class="announcement-bar__image">
+					<img srcset="{%- if section.settings.image.width >= 25 -%}{{ section.settings.image | img_url: '25x' }} 25w,{%- endif -%}
+							{%- if section.settings.image.width >= 50 -%}{{ section.settings.image | img_url: '50x' }} 50w,{%- endif -%}
+							{%- if section.settings.image.width >= 75 -%}{{ section.settings.image | img_url: '75x' }} 75w,{%- endif -%}"
+							 src="{{ section.settings.image | img_url: '75x' }}"
+							 alt="{{ section.settings.image.alt | escape }}"
+							 loading="lazy"
+							 width="{{ section.settings.image.width }}"
+							 height="{{ section.settings.image.height }}"
+					>
+				</figure>
 			{%- endif -%}
-			<div class="announcement-bar__message">
-				{%- if section.settings.image != blank -%}
-					<figure class="announcement-bar__image">
-						<img srcset="{%- if section.settings.image.width >= 25 -%}{{ section.settings.image | img_url: '25x' }} 25w,{%- endif -%}
-								{%- if section.settings.image.width >= 50 -%}{{ section.settings.image | img_url: '50x' }} 50w,{%- endif -%}
-								{%- if section.settings.image.width >= 75 -%}{{ section.settings.image | img_url: '75x' }} 75w,{%- endif -%}"
-								 src="{{ section.settings.image | img_url: '75x' }}"
-								 alt="{{ section.settings.image.alt | escape }}"
-								 loading="lazy"
-								 width="{{ section.settings.image.width }}"
-								 height="{{ section.settings.image.height }}"
-						>
-					</figure>
-				{%- endif -%}
-				<span class="announcement-bar__text">{{ section.settings.text }}</span>
-			</div>
-			{%- if section.settings.link != blank -%}
-				</a>
-			{%- endif -%}
+			<span class="announcement-bar__text">{{ section.settings.text }}</span>
 		</div>
+		{%- if section.settings.link != blank -%}
+			</a>
+		{%- endif -%}
 	{%- endif -%}
-
-	{%- liquid
-		assign second_text = section.settings.text_2
-		if second_text == blank
-			assign second_text = 'Handmade to order'
-		endif
-	-%}
-	{%- if second_text != blank and second_text != section.settings.text -%}
-		<div class="announcement-bar__slide{% if section.settings.text == blank %} is-active{% endif %}" data-announcement-slide>
-			{%- if section.settings.link_2 != blank -%}
-				<a href="{{ section.settings.link_2 }}" class="announcement-bar__link link link--text focus-inset animate-arrow">
-			{%- endif -%}
-			<div class="announcement-bar__message">
-				<span class="announcement-bar__text">{{ second_text }}</span>
-			</div>
-			{%- if section.settings.link_2 != blank -%}
-				</a>
-			{%- endif -%}
-		</div>
-	{%- endif -%}
-</announcement-bar>
+</div>
 
 <script>
-	if (!customElements.get('announcement-bar')) {
-		class AnnouncementBar extends HTMLElement {
-			connectedCallback() {
-				this.slides = Array.from(this.querySelectorAll('[data-announcement-slide]'));
-				if (this.slides.length < 2) return;
+	(function () {
+		const group = document.querySelector('.shopify-section-group-header-group');
+		if (!group || group.dataset.announcementRotator === 'true') return;
 
-				this.index = this.slides.findIndex((slide) => slide.classList.contains('is-active'));
-				if (this.index < 0) this.index = 0;
-				this.interval = Number(this.dataset.interval) || 5000;
-				this.start();
-				this.addEventListener('mouseenter', this.stop);
-				this.addEventListener('mouseleave', this.start);
-				this.addEventListener('focusin', this.stop);
-				this.addEventListener('focusout', this.start);
-			}
+		const bars = Array.from(group.querySelectorAll('.section-announcement'));
+		if (bars.length < 2) return;
 
-			disconnectedCallback() {
-				this.stop();
-			}
+		group.dataset.announcementRotator = 'true';
+		group.classList.add('is-rotating-announcements');
 
-			start = () => {
-				this.stop();
-				this.timer = setInterval(this.next, this.interval);
-			};
+		let index = 0;
+		const interval = Number(bars[0].querySelector('[data-interval]')?.dataset.interval) || 5000;
 
-			stop = () => {
-				if (this.timer) clearInterval(this.timer);
-			};
+		bars.forEach((bar, i) => bar.classList.toggle('is-active', i === 0));
 
-			next = () => {
-				const current = this.slides[this.index];
-				this.index = (this.index + 1) % this.slides.length;
-				const next = this.slides[this.index];
-				current.classList.remove('is-active');
-				next.classList.add('is-active');
-			};
-		}
-
-		customElements.define('announcement-bar', AnnouncementBar);
-	}
+		setInterval(function () {
+			bars[index].classList.remove('is-active');
+			index = (index + 1) % bars.length;
+			bars[index].classList.add('is-active');
+		}, interval);
+	})();
 </script>
 
 {% schema %}
@@ -134,17 +88,6 @@
 			"info": "t:sections.announcement-bar.settings.image.info"
 		},
 		{
-			"type": "html",
-			"id": "text_2",
-			"default": "t:sections.announcement-bar.settings.text_2.default",
-			"label": "t:sections.announcement-bar.settings.text_2.label"
-		},
-		{
-			"type": "url",
-			"id": "link_2",
-			"label": "t:sections.announcement-bar.settings.link_2.label"
-		},
-		{
 			"type": "range",
 			"id": "change_every",
 			"min": 3,
@@ -157,8 +100,7 @@
 	],
 	"default": {
 		"settings": {
-			"text": "t:sections.announcement-bar.settings.text.default",
-			"text_2": "t:sections.announcement-bar.settings.text_2.default"
+			"text": "t:sections.announcement-bar.settings.text.default"
 		}
 	}
 }

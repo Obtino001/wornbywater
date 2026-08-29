@@ -2638,23 +2638,37 @@ html.no-js .quantity__input:hover {
   display: none;
 }
 
-.announcement-bar {
+.shopify-section-group-header-group {
   display: grid;
-  font-size: 1.2rem;
+  grid-template-columns: 1fr;
 }
 
-.announcement-bar__slide {
-  grid-area: 1 / 1;
+.shopify-section-group-header-group > .section-announcement {
+  grid-column: 1;
+  grid-row: 1;
+  z-index: 4;
+}
+
+.shopify-section-group-header-group.is-rotating-announcements > .section-announcement {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
   transition: opacity 0.45s ease, visibility 0.45s ease;
 }
 
-.announcement-bar__slide.is-active {
+.shopify-section-group-header-group.is-rotating-announcements > .section-announcement.is-active {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
+}
+
+.shopify-section-group-header-group > .shopify-section-header {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.announcement-bar {
+  font-size: 1.2rem;
 }
 
 .announcement-bar-1 {

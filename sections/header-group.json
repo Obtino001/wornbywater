@@ -16,7 +16,17 @@
       "settings": {
         "color_scheme": "1",
         "text": "Free Shipping across Ireland",
-        "link": ""
+        "link": "",
+        "change_every": 5
+      }
+    },
+    "announcement-bar-2": {
+      "type": "announcement-bar",
+      "settings": {
+        "color_scheme": "1",
+        "text": "Handmade to order",
+        "link": "",
+        "change_every": 5
       }
     },
     "header": {
@@ -63,6 +73,7 @@
   },
   "order": [
     "announcement-bar",
+    "announcement-bar-2",
     "header"
   ]
 }
