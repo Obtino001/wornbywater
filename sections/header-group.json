@@ -12,13 +12,29 @@
   "name": "t:sections.header.settings.header-group.label",
   "sections": {
     "announcement-bar": {
-      "type": "announcement-bar",
+      "type": "marquee",
+      "blocks": {
+        "announcement-1": {
+          "type": "text_block",
+          "settings": {
+            "text": "Free Shipping across Ireland"
+          }
+        },
+        "announcement-2": {
+          "type": "text_block",
+          "settings": {
+            "text": "Choose two pieces, and I'll make a third at no cost"
+          }
+        }
+      },
+      "block_order": [
+        "announcement-1",
+        "announcement-2"
+      ],
       "settings": {
-        "color_scheme": "1",
-        "text": "Free Shipping across Ireland",
-        "link": "",
-        "text_2": "Choose two pieces, and I'll make a third at no cost",
-        "change_every": 5
+        "scroll_speed": 30,
+        "padding_top": 10,
+        "padding_bottom": 10
       }
     },
     "header": {
