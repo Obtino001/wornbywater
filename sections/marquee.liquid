@@ -109,3 +109,79 @@
 </div>
 
 {% comment %} Styles moved to Arvenixo.css {% endcomment %}
+
+
+<style>
+
+
+
+/* --------------------------------------------------------------------------
+   30. MARQUEE / SCROLLING BANNER
+   -------------------------------------------------------------------------- */
+.sr-marquee-section {
+    width: 100vw;
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+}
+
+.sr-marquee-container {
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+    width: 100%;
+}
+
+.sr-marquee-track {
+    display: flex;
+    width: fit-content;
+    animation: sr-scroll var(--marquee-speed) linear infinite;
+}
+
+.sr-marquee-section:hover .sr-marquee-track {
+    animation-play-state: paused;
+}
+
+.sr-marquee-content {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.sr-marquee-item {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+}
+
+.sr-marquee-text {
+    font-family: inherit;
+    font-size: var(--marquee-font-size);
+    letter-spacing: 0.5px;
+    color: white;
+}
+
+.sr-marquee-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    background-color: currentColor;
+    border-radius: var(--sl-radius-round);
+    margin: 0 40px;
+    flex-shrink: 0;
+}
+
+@keyframes sr-scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-25%);
+    }
+}
+
+</style>
