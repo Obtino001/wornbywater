@@ -49,7 +49,7 @@
         "scroll_speed": 30,
         "swiper_autoplay": true,
         "swiper_speed": 3,
-        "swiper_arrows": true,
+        "swiper_arrows": false,
         "swiper_pagination": false
       }
     },
