@@ -1,83 +1,92 @@
-<style>
-  .sr-marquee-section {
-    background: rgb(var(--color-announcement-bar-background-1));
-    color: #fff;
-    overflow: hidden;
-  }
-
-  .sr-marquee-container {
-    overflow: hidden;
-  }
-
-  .sr-marquee-track {
-    display: flex;
-    width: max-content;
-    animation: sr-marquee-scroll var(--marquee-speed, 30s) linear infinite;
-  }
-
-  .sr-marquee-section:hover .sr-marquee-track {
-    animation-play-state: paused;
-  }
-
-  .sr-marquee-content {
-    display: flex;
-    align-items: center;
-    flex-shrink: 0;
-  }
-
-  .sr-marquee-item {
-    display: flex;
-    align-items: center;
-    gap: 1.6rem;
-    padding: 0 1.6rem;
-    white-space: nowrap;
-  }
-
-  .sr-marquee-text {
-    font-family: var(--font-body-family);
-    font-style: var(--font-body-style);
-    font-weight: 400;
-    font-size: 1.2rem;
-    line-height: 1.45;
-    letter-spacing: 0;
-  }
-
-  .sr-marquee-dot {
-    width: 0.4rem;
-    height: 0.4rem;
-    border-radius: 50%;
-    background: currentColor;
-    opacity: 0.55;
-    flex-shrink: 0;
-  }
-
-  @keyframes sr-marquee-scroll {
-    from { transform: translateX(0); }
-    to { transform: translateX(-25%); }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .sr-marquee-track {
-      animation: none;
+{% schema %}
+{
+  "name": "Scrolling Banner",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Color Scheme",
+      "default": "scheme-4"
+    },
+    {
+      "type": "range",
+      "id": "scroll_speed",
+      "min": 10,
+      "max": 60,
+      "step": 2,
+      "unit": "s",
+      "label": "Scroll Speed",
+      "default": 30,
+      "info": "Lower is faster, higher is slower."
+    },
+    {
+      "type": "range",
+      "id": "font_size",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Text Size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 36,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Top",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 36,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding Bottom",
+      "default": 12
     }
-  }
-</style>
+  ],
+  "blocks": [
+    {
+      "type": "text_block",
+      "name": "Text Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Add your banner text here"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Scrolling Banner",
+      "blocks": [
+        { "type": "text_block", "settings": { "text": "60-day satisfaction guarantee" } },
+        { "type": "text_block", "settings": { "text": "Tracked shipping" } },
+        { "type": "text_block", "settings": { "text": "High-quality customer service" } },
+        { "type": "text_block", "settings": { "text": "Free shipping above NOK 800" } }
+      ]
+    }
+  ]
+}
+{% endschema %}
 
-<div
-  class="sr-marquee-section announcement-bar announcement-bar-1"
-  role="region"
-  aria-label="{{ 'sections.header.announcement' | t }}"
-  style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;"
->
-  <div class="sr-marquee-container" style="--marquee-speed: {{ section.settings.scroll_speed }}s;">
+<div class="sr-marquee-section color-{{ section.settings.color_scheme }} gradient" style="padding-top: {{ section.settings.padding_top }}px; padding-bottom: {{ section.settings.padding_bottom }}px;">
+  <div class="sr-marquee-container" style="--marquee-speed: {{ section.settings.scroll_speed }}s; --marquee-font-size: {{ section.settings.font_size }}px;">
+    
     {%- capture marquee_content -%}
       {%- for block in section.blocks -%}
-        {%- if block.settings.text != blank -%}
-          <div class="sr-marquee-item" {{ block.shopify_attributes }}>
-            <span class="sr-marquee-text">{{ block.settings.text }}</span>
-            <span class="sr-marquee-dot"></span>
-          </div>
-        {%- endif -%}
+        <div class="sr-marquee-item" {{ block.shopify_attributes }}>
+          <span class="sr-marquee-text">{{ block.settings.text }}</span>
+          <span class="sr-marquee-dot"></span>
+        </div>
       {%- endfor -%}
     {%- endcapture -%}
 
@@ -95,68 +104,8 @@
         {{ marquee_content }}
       </div>
     </div>
+
   </div>
 </div>
 
-{% schema %}
-{
-  "name": "Scrolling Banner",
-  "class": "section-announcement",
-  "settings": [
-    {
-      "type": "range",
-      "id": "scroll_speed",
-      "min": 10,
-      "max": 60,
-      "step": 2,
-      "unit": "s",
-      "label": "Scroll Speed",
-      "default": 30,
-      "info": "Lower is faster, higher is slower."
-    },
-    {
-      "type": "range",
-      "id": "padding_top",
-      "min": 0,
-      "max": 36,
-      "step": 4,
-      "unit": "px",
-      "label": "Padding Top",
-      "default": 10
-    },
-    {
-      "type": "range",
-      "id": "padding_bottom",
-      "min": 0,
-      "max": 36,
-      "step": 4,
-      "unit": "px",
-      "label": "Padding Bottom",
-      "default": 10
-    }
-  ],
-  "blocks": [
-    {
-      "type": "text_block",
-      "name": "Text Item",
-      "settings": [
-        {
-          "type": "text",
-          "id": "text",
-          "label": "Text",
-          "default": "Free Shipping across Ireland"
-        }
-      ]
-    }
-  ],
-  "presets": [
-    {
-      "name": "Scrolling Banner",
-      "blocks": [
-        { "type": "text_block", "settings": { "text": "Free Shipping across Ireland" } },
-        { "type": "text_block", "settings": { "text": "Choose two pieces, and I'll make a third at no cost" } }
-      ]
-    }
-  ]
-}
-{% endschema %}
+{% comment %} Styles moved to Arvenixo.css {% endcomment %}
