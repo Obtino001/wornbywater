@@ -300,6 +300,9 @@
                       </div>
                     {%- endform -%}
                   </product-form>
+                  <div class="product-form__payment-icons">
+                    {% render 'Payments' %}
+                  </div>
                 </div>
               {% else %}
                 <div {{ block.shopify_attributes }}>

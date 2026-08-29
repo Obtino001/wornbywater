@@ -197,9 +197,7 @@
 							</ul>
 						{%- endif -%}
 						{%- when 'Payments' -%}
-							<div {{ block.shopify_attributes }}>
-								{% render 'Payments' %}
-							</div>
+							{%- comment -%}Rendered under the add to cart button{%- endcomment -%}
 {%- when 'product_usps' -%}
     {% render 'product-usps', block: block %}
 						{%- when 'price' -%}
@@ -332,6 +330,9 @@
 										</div>
 									{%- endform -%}
 								</product-form>
+								<div class="product-form__payment-icons">
+									{% render 'Payments' %}
+								</div>
 							</div>
 
 						{%- when 'pickup_availability' -%}
