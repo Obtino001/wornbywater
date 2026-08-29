@@ -504,6 +504,7 @@
           "type": "slide",
           "settings": {
             "media_style": "image",
+            "image": "shopify://shop_images/iap_1200x1200.7777959751_5kjcdwww.png",
             "video_url": "",
             "controls": false,
             "stars_count": 0,
@@ -515,6 +516,7 @@
           "type": "slide",
           "settings": {
             "media_style": "image",
+            "image": "shopify://shop_images/iap_1200x1200.7473159858_qyspf2gd.png",
             "video_url": "",
             "controls": false,
             "stars_count": 0,
@@ -526,6 +528,7 @@
           "type": "slide",
           "settings": {
             "media_style": "image",
+            "image": "shopify://shop_images/iap_1200x1200.7310961705_oo7et47x.png",
             "video_url": "",
             "controls": false,
             "stars_count": 0,
