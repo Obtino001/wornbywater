@@ -11,17 +11,6 @@
   "type": "header",
   "name": "t:sections.header.settings.header-group.label",
   "sections": {
-    "announcement-bar": {
-      "type": "announcement-bar",
-      "settings": {
-        "color_scheme": "1",
-        "text": "Free Shipping across Ireland",
-        "link": "",
-        "text_2": "Choose two pieces, and I'll make a third at no cost",
-        "link_2": "",
-        "change_every": 5
-      }
-    },
     "marquee_djDUXz": {
       "type": "marquee",
       "blocks": {
@@ -51,9 +40,9 @@
       ],
       "name": "Scrolling Banner",
       "settings": {
-        "bg_color": "#FFFFFF",
+        "bg_color": "#ffffff",
         "text_color": "#000000",
-        "font_size": 16,
+        "font_size": 14,
         "padding_top": 12,
         "padding_bottom": 12,
         "enable_swiper": false,
@@ -62,6 +51,17 @@
         "swiper_speed": 3,
         "swiper_arrows": true,
         "swiper_pagination": false
+      }
+    },
+    "announcement-bar": {
+      "type": "announcement-bar",
+      "settings": {
+        "color_scheme": "1",
+        "text": "Free Shipping across Ireland",
+        "link": "",
+        "text_2": "Choose two pieces, and I'll make a third at no cost",
+        "link_2": "",
+        "change_every": 5
       }
     },
     "header": {
@@ -107,8 +107,8 @@
     }
   },
   "order": [
-    "announcement-bar",
     "marquee_djDUXz",
+    "announcement-bar",
     "header"
   ]
 }
